@@ -1,0 +1,97 @@
+git
+バージョン管理システム「Git」とは
+・コードの変更を記録(add,commit)
+・状態や変更箇所を確認(log,diff)
+・前の状態を復活(reset, revert)
+・作業個所を分岐(branch, checkout)
+・作業個所を統合(push,merge)
+
+vimの使い方
+
+編集モードに切り替える
+a　現在のカーソル位置の右から入力する
+A　現在の行の末尾に入力する
+
+コマンドモード
+編集モードからコマンドモードに切り替える
+u 元に戻す
+:wq　保存して終了
+:q!　保存しないで終了
+
+
+Gitの基本コマンド
+・オプションを付けないで実行すると、簡易ヘルプが表示される
+git
+
+・バージョンを表示する
+git --version
+
+・ユーザー情報を登録する
+名前とmailアドレスを登録する。作業履歴の記録時に、この名前が使われる。
+(名前)
+git config --global user.name "hirai"
+(email)
+git config --global user.email "hirai@hirai.com"
+
+・登録情報を確認する
+git config --list
+
+・リポジトリを作成する
+mkdir mywork
+cd mywork
+git init
+
+・リポジトリやステージングエリアの状態を確認する
+git status
+
+・ステージングエリアに仮登録する
+git add hira.txt
+
+・ステージングエリアの内容をコミットする
+git commit
+
+・コミット履歴を確認する
+git log
+
+・ステージングエリアにまとめて仮登録する
+git add .
+
+・仮登録とコミットを同時に実行する
+git commit -a
+
+・コミットメッセージを同時に指定する
+git commit -m "hirai yuji"
+
+・コミット履歴を確認する
+git log
+
+・コミットメッセージだけを表示する
+git log --oneline
+
+・指定した件数だけコミットログを表示する
+git log -2
+
+・ステータスをシンプルな形式で表示する
+git status -s
+
+・ステージングとワーキングディレクトリを比較する
+git diff
+
+・最新コミットとステージングエリアを比較する
+git diff --cached
+
+・最新コミットをワーキングディレクトリを比較する
+git diff HEAD
+
+
+ワーキングディレクトリのファイルを前の状態に戻す
+git checkout hirai.txt
+
+
+ステージング上の特定のファイルをひとつ前の状態に戻す
+
+git reset hitai.txt
+
+
+最新のコミットを打ち消す
+git revert HEAD
